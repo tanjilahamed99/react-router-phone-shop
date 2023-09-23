@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import MainUi from "./MainUi";
 import Home from "./components/Home/Home";
 import Detail from "./components/Home/home-pages/Detail";
+import Favorite from "./components/favorite/Favorite";
 
 const Provider = createBrowserRouter([
     {
@@ -14,7 +15,8 @@ const Provider = createBrowserRouter([
             },
             {
                 path: '/favorites',
-                element: <h2>favorites</h2>
+                element: <Favorite></Favorite>,
+                loader:()=>fetch('../phone.json')
             },
             {
                 path: '/login',
